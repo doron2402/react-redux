@@ -5,12 +5,16 @@ import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import CoursesPage from './components/course/CoursesPage';
 import ContactPage from './components/contact/ContactPage';
+import PostsPage from './components/posts/PostsPage';
+import TonyPage from './components/tony/TonyPage';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="courses" component={CoursesPage} />
     <Route path="about" component={AboutPage} />
+    <Route path="posts" component={PostsPage} />
     <Route path="contact" component={ContactPage} />
+    <Route path="tony" component={TonyPage} />
   </Route>
 );
