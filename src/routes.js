@@ -7,14 +7,18 @@ import CoursesPage from './components/course/CoursesPage';
 import ContactPage from './components/contact/ContactPage';
 import PostsPage from './components/posts/PostsPage';
 import TonyPage from './components/tony/TonyPage';
+import ManageCoursePage from './components/course/ManageCoursePage';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="courses" component={CoursesPage} />
+    <Route path="course" component={ManageCoursePage} />
+    <Route path="course/:id" component={ManageCoursePage} />
     <Route path="about" component={AboutPage} />
     <Route path="posts" component={PostsPage} />
     <Route path="contact" component={ContactPage} />
     <Route path="tony" component={TonyPage} />
+
   </Route>
 );
