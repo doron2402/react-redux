@@ -3,6 +3,7 @@ import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
 
 const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors }) => {
+
   return (
     <form>
       <h1>Manage Course</h1>
@@ -16,7 +17,7 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors }) =>
         <SelectInput
           name="authorId"
           label="Author"
-          value="course.authorId"
+          value={allAuthors[course.authorId]}
           defaultOption="Select Author"
           options={allAuthors}
           onChange={onChange}

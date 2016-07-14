@@ -19,6 +19,5 @@ export default (
     <Route path="posts" component={PostsPage} />
     <Route path="contact" component={ContactPage} />
     <Route path="tony" component={TonyPage} />
-
   </Route>
 );
