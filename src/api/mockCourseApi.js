@@ -8,7 +8,7 @@ const courses = [
     id: "react-flux-building-applications",
     title: "Building Applications in React and Flux",
     watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
-    authorId: 1,
+    authorId: 'cory-house',
     length: "5:08",
     category: "JavaScript"
   },
@@ -16,7 +16,7 @@ const courses = [
     id: "clean-code",
     title: "Clean Code: Writing Code for Humans",
     watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
-    authorId: 1,
+    authorId: 'cory-house',
     length: "3:10",
     category: "Software Practices"
   },
@@ -24,7 +24,7 @@ const courses = [
     id: "architecture",
     title: "Architecting Applications for the Real World",
     watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
-    authorId: 1,
+    authorId: 'cory-house',
     length: "2:52",
     category: "Software Architecture"
   },
@@ -32,7 +32,7 @@ const courses = [
     id: "career-reboot-for-developer-mind",
     title: "Becoming an Outlier: Reprogramming the Developer Mind",
     watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
-    authorId: 2,
+    authorId: 'scott-allen',
     length: "2:30",
     category: "Career"
   },
@@ -40,7 +40,7 @@ const courses = [
     id: "web-components-shadow-dom",
     title: "Web Component Fundamentals",
     watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
-    authorId: 2,
+    authorId: 'scott-allen',
     length: "5:10",
     category: "HTML5"
   }
@@ -69,11 +69,17 @@ class CourseApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
-        const minCourseTitleLength = 1;
+        const minCourseTitleLength = 2;
+        const minCourseCategoryLength = 2;
         if (course.title.length < minCourseTitleLength) {
           reject(`Title must be at least ${minCourseTitleLength} characters.`);
         }
 
+        if (!course.category || course.category.length < minCourseCategoryLength) {
+          reject(`Category must be at least ${minCourseCategoryLength} characters.`);
+        }
+
+        
         if (course.id) {
           const existingCourseIndex = courses.findIndex(a => a.id == course.id);
           courses.splice(existingCourseIndex, 1, course);
