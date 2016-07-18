@@ -11,12 +11,13 @@ class AuthorsPage extends React.Component {
 
   }
 
-
   render() {
     return (
       <div>
         <h2>Authors</h2>
-        <AuthorsList authors={this.props.authors} />
+        <AuthorsList
+          authors={this.props.authors}
+          />
       </div>
     );
   }
