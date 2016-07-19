@@ -1,10 +1,12 @@
 import React, {PropTypes} from 'react';
 const editAuthor = (author) => {
   console.log(author);
+  alert(`Athor  ${author.firstName}`);
 }
 const deleteAuthor = (author) => {
   console.log('Deleting..');
   console.log(author);
+  alert(`Delete Author  ${author.firstName}`);
 }
 
 const AuthorsList = ({ authors }) => {
@@ -24,7 +26,7 @@ const AuthorsList = ({ authors }) => {
         {authors.map(author =>
             <tr>
               <td>&nbsp;</td>
-              <td>{author.Id}</td>
+              <td>{author.id}</td>
               <td>{author.firstName}</td>
               <td>{author.lastName}</td>
               <td onClick={editAuthor.bind(this, author )}>Edit</td>

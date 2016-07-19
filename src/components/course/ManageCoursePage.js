@@ -34,6 +34,7 @@ class ManageCoursePage extends React.Component {
   }
 
   saveCourse(event) {
+    debugger;
     event.preventDefault();
     this.setState({ saving: true });
     this.props.actions.saveCourse(this.state.course)
