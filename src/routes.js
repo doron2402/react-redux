@@ -8,7 +8,7 @@ import AuthorsPage from './components/author/AuthorsPage';
 import ContactPage from './components/contact/ContactPage';
 import PostsPage from './components/posts/PostsPage';
 import TonyPage from './components/tony/TonyPage';
-import ManageCoursePage from './components/course/ManageCoursePage';
+import ManageCoursePage from './components/course/ManageCoursePage'; //eslint-disable-line import/no-named-as-default
 
 export default (
   <Route path="/" component={App}>

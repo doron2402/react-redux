@@ -15,28 +15,27 @@ export function updateCourseSuccess(course) {
 }
 
 export function loadCourses() {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch(beginAjaxCall());
     return courseApi.getAllCourses()
-    .then(courses => {
-      dispatch(loadCoursesSuccess(courses));
-    }).catch(error => {
-      throw(error);
-    });
-  }
+      .then(courses => {
+        dispatch(loadCoursesSuccess(courses));
+      }).catch(error => {
+        throw (error);
+      });
+  };
 }
 
 export function saveCourse(course) {
-  return function(dispatch, getState) {
+  return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course)
-    .then(savedCourse => {
-      course.id ? dispatch(updateCourseSuccess(savedCourse)) :
-      dispatch(createCourseSuccess(savedCourse));
-    }).catch(error => {
-      debugger;
-      dispatch(ajaxCallError(error));
-      throw(error);
-    });
-  }
+      .then(savedCourse => {
+        course.id ? dispatch(updateCourseSuccess(savedCourse)) :
+          dispatch(createCourseSuccess(savedCourse));
+      }).catch(error => {
+        dispatch(ajaxCallError(error));
+        throw (error);
+      });
+  };
 }

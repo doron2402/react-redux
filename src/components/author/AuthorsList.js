@@ -1,13 +1,12 @@
 import React, {PropTypes} from 'react';
+
 const editAuthor = (author) => {
-  console.log(author);
   alert(`Athor  ${author.firstName}`);
-}
+};
+
 const deleteAuthor = (author) => {
-  console.log('Deleting..');
-  console.log(author);
   alert(`Delete Author  ${author.firstName}`);
-}
+};
 
 const AuthorsList = ({ authors }) => {
   return (
@@ -29,8 +28,8 @@ const AuthorsList = ({ authors }) => {
               <td>{author.id}</td>
               <td>{author.firstName}</td>
               <td>{author.lastName}</td>
-              <td onClick={editAuthor.bind(this, author )}>Edit</td>
-              <td onClick={deleteAuthor.bind(this, author )}>Delete</td>
+              <td onClick={editAuthor.bind(this, author )} key={author.id}>Edit</td>
+              <td onClick={deleteAuthor.bind(this, author )} key={author.id}>Delete</td>
             </tr>
         )}
       </tbody>
