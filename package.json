@@ -11,7 +11,9 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
     "test-spec": "mocha --reporter spec tools/testSetup.js \"src/**/*.spec.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,8 @@
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
-    "toastr": "2.1.2"
+    "toastr": "2.1.2",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "babel-cli": "6.8.0",
@@ -73,5 +76,6 @@
   "bugs": {
     "url": "https://github.com/doron2402/react-redux/issues"
   },
-  "homepage": "https://github.com/doron2402/react-redux#readme"
+  "homepage": "https://github.com/doron2402/react-redux#readme",
+  "snyk": true
 }
